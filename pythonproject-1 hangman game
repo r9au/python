@@ -1,0 +1,70 @@
+from collections import Counter
+def play(n,word,h):
+    l1=[]
+    l2=[]
+    for x in word:
+        l1.append(x)
+    d1=Counter(l1)
+    print(f"The word is of lenghth {n}")
+    print(f"You will Have {n} tries")
+    print("Enter Specefic HINT-",h)
+    print("Start your Guesses")
+    l=[]
+    tr=0
+    for i in range(n):
+        l.append("_")
+    for j in range(n):
+        s1=input("Guess the letter:")
+        if s1 in word:
+            l[word.index(s1)]=s1
+            l2.append(s1)
+            s=" ".join(l)
+            print(s)
+        else:
+            print("Entered wrong character")
+            tr+=1
+            if tr!=len(w)+5:
+                continue
+            else:
+                print("Sorry you lose as you over exceeded tries")
+                break
+    e=s.split(" ")
+    gword="".join(e)
+    d2=Counter(l2)
+    if d1==d2:
+        print("You won!! the Game")
+    else:
+        print("Sorry, You Lose")
+    # Use a breakpoint in the code line below to debug your script.
+      # Press Ctrl+F8 to toggle the breakpoint.
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print("Hangman")
+    n=int(input("Enter the lenghth of word to be Guessed:"))
+    w=input("Enter the word for your partner to Guess:")
+    h=input("Enter some hint for your Player:")
+    for i in range(10):
+        print("\n")
+    play(n,w,h)
+    print("T-Try Again")
+    print("P-play Again")
+    print("E-Exit")
+    c=input("Enter the option:")
+    match c:
+        case "T":
+           n=int(input("Enter the lenghth of word to be Guessed:"))
+           w=input("Enter the word for your partner to Guess")
+           h=input("Enter some hint for your Player:")
+           for i in range(10):
+                 print("\n")
+           play(n,w,h)
+        case "P":
+            n=int(input("Enter the lenghth of word to be Guessed:"))
+            w=input("Enter the word for your partner to Guess")
+            h=input("Enter some hint for your Player:")
+            for i in range(10):
+                print("\n")
+            play(n,w,h)
+        case "E":
+            print("Game Finished")
