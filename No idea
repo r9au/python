@@ -1,0 +1,11 @@
+n,m =map(int,input().split(" "))
+ha=0
+ar=list(map(int ,input().split(" ")))
+a=set(map(int,input().split(" ")))
+b=set(map(int,input().split(" ")))
+for i in ar:
+    if i in a:
+        ha+=1
+    elif i in b:
+        ha=ha-1
+print(ha)
