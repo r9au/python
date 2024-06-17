@@ -1,0 +1,19 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+n=int(input())
+l=[]
+l1=[]
+occ=0
+for i in range(n):
+    s=input()
+    l.append(s)
+d=Counter(l)
+#print(d)
+se=set(l)
+occ=len(se)
+for k in d:
+    if k in se:
+       l1.append(str(d[k])) 
+tx=" ".join(l1)
+print(occ)
+print(tx)
