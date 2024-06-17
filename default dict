@@ -1,0 +1,26 @@
+from collections import defaultdict
+import re
+
+n,m=map(int,input().split(" "))
+dic=defaultdict(list)
+l=[]
+l1=[]
+z=[]
+k=0
+for i in range(n):
+    c=input()
+    l.append(c)
+#print(l)
+for j in range(m):
+    d=input()
+    l1.append(d)
+    for x in range(k,len(l)):            
+        if l[x] in l1 and l[x]==d:
+            #print(x+1)
+            dic[d].append(str(x+1))
+            k+=1
+        else:
+            k-=1
+for y in dic.items():
+    s=" ".join((y[1]))
+    print(s)
